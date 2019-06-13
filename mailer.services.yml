@@ -1,0 +1,4 @@
+services:
+  mailer.subscribermail:
+    class: Drupal\mailer\CustomServices\SubscriberMail
+    arguments: ['@entity_type.manager', '@entity.repository']

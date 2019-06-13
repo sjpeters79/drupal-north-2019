@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains mailer.module
+ */
+
+/**
+ * Implements hook_cron().
+ */
+function mailer_cron() {
+  $campaigns_ready_to_run = getCampaignsToRun();
+  $campaign_runner = \Drupal::service('mailer.subscribermail');
+  foreach ($campaigns_ready_to_run as $nid) {
+    $campaign_runner->setCampaign($nid);
+    $campaign_runner->generateMail(FALSE, TRUE);
+  }
+
+}
+
+function getCampaignsToRun() {
+  // Dyanmically load all campaign nids to run but for now static
+  return ['1','2','3'];
+}

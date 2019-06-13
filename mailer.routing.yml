@@ -1,0 +1,5 @@
+mailer.test_mail:
+  path: '/generate-mail/{node}/test'
+  defaults:
+    _controller: '\Drupal\mailer\SendMail::sendTestMail'
+    arguments: ['@subscribermail','@messenger']

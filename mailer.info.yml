@@ -1,0 +1,5 @@
+name: 'STC CAMPAIGN Mailer'
+description: 'Schedules and mails out emails for each campaign'
+type: module
+core: 8.x
+package: 'STC CAMPAIGN'
